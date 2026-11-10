@@ -1,0 +1,15 @@
+import { useState } from 'react'; 
+import { View, Text, Button } from 'react-native'; 
+
+// Exercício 3
+
+export default function App() { 
+  const [visivel, setVisivel] = useState(false); 
+
+  return ( 
+    <View> 
+      <Button title="Mostrar/Esconder" onPress={() => setVisivel(!visivel)} /> 
+      {visivel && <Text>Você encontrou o segredo!</Text>} 
+    </View> 
+  ); 
+}

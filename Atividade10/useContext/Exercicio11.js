@@ -1,0 +1,19 @@
+import { createContext, useContext } from 'react'; 
+import { Text } from 'react-native'; 
+
+// Exercicio 11
+
+const UsuarioContext = createContext(); 
+
+function Perfil() {
+  const { nome, idade } = useContext(UsuarioContext); 
+  return <Text>{nome}, {idade} anos</Text>; 
+} 
+
+export default function App() { 
+  return ( 
+    <UsuarioContext.Provider value={{ nome: 'Ana', idade: 25 }}> 
+      <Perfil /> 
+    </UsuarioContext.Provider> 
+  ); 
+}
